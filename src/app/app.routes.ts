@@ -4,5 +4,6 @@ import { Login } from './componants/login/login';
 
 export const routes: Routes = [
     {path:'', component:Login },
-    { path: 'LandingPage', component: LandingPage }
+    { path: 'landing-page', component: LandingPage },
+    {path : '**' , redirectTo : ''}
 ];

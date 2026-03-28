@@ -24,10 +24,7 @@ export class Login {
    const { email, password } = form.value;
 
     if (email === this.userData.email && password === this.userData.password) {
-      this.router.navigate(['/LandingPage']);
-      this.router.navigate(['/LandingPage']).then(success => {
-    console.log("Navigation success:", success);
-  });
+      this.router.navigate(['/landing-page']);
       alert("Login Successful!");
     } else {
       alert("Invalid credentials");
