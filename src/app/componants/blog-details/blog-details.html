@@ -1,0 +1,75 @@
+<div class="text-gray-900 text-end p-8">
+  <span class=" mr-40 hover:text-cyan-300" routerLink="/landing-page">Back</span>
+</div>
+<div class="max-w-7xl mx-auto px-6 py-10 flex gap-10">
+
+  <!-- MAIN BLOG -->
+  <div class="flex-1 max-w-3xl">
+
+    <!-- TITLE -->
+    <h1 class="text-4xl font-serif font-bold leading-tight">
+      {{ blog?.title }}
+    </h1>
+
+    <!-- AUTHOR -->
+    <div class="flex items-center gap-3 mt-4 text-sm text-gray-600">
+      <img src="https://i.pravatar.cc/40" class="rounded-full">
+      <span>{{ blog?.author }}</span>
+      <span>·</span>
+      <span>{{ blog?.date }}</span>
+    </div>   
+
+    <!-- ACTIONS -->
+    <div class="flex gap-4 mt-6 text-gray-500 text-sm border-y py-3">
+      <button class="hover:text-black">❤️ Like</button>
+      <button class="hover:text-black">🔖 Save</button>
+      <button class="hover:text-black">🔗 Share</button>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="mt-8 text-lg leading-relaxed text-gray-800 whitespace-pre-line">
+      {{ blog?.content }}
+    </div>
+
+    <!-- TAGS -->
+    <div class="mt-8 flex flex-wrap gap-2">
+      @for(tag of blog?.tags;;track blog.id)
+      {
+        <span 
+              class="px-3 py-1 bg-gray-100 rounded-full text-sm">
+          {{ tag }}
+        </span>
+      }
+    </div>
+
+  </div>
+
+
+  <!-- SIDEBAR (Suggestions) -->
+  <aside class="w-80 hidden md:block">
+
+    <div class="sticky top-24">
+
+      <h3 class="font-semibold mb-4">More like this</h3>
+
+      @for(item of suggestions;track item.id){
+
+        <div 
+             class="mb-6 cursor-pointer hover:bg-gray-50 p-3 rounded-lg transition">
+  
+          <h4 class="font-semibold text-sm">
+            {{ item?.title }}
+          </h4>
+  
+          <div class="text-xs text-gray-500 mt-1">
+            {{ item?.author }} · {{ item?.date }}
+          </div>
+        </div>
+      }
+
+
+    </div>
+
+  </aside>
+
+</div>

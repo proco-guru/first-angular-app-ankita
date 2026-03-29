@@ -1,0 +1,109 @@
+<!-- NAVBAR -->
+<header class="border-b bg-white sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <!-- Logo -->
+    <h1 class="text-2xl font-bold">BloggieBlogs</h1>
+
+    <!-- Links -->
+    <div class="flex items-center gap-6 text-sm">
+      <a class="text-gray-600 hover:text-black cursor-pointer">Our Story</a>
+      <a class="text-gray-600 hover:text-black cursor-pointer">Membership</a>
+      <a class="text-gray-600 hover:text-black cursor-pointer">Write</a>
+      <a class="text-gray-600 hover:text-black cursor-pointer" routerLink="/">Sign In</a>
+
+      <button class="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800">
+        Get Started
+      </button>
+      <!-- AUTHOR -->
+      <img src="https://i.pravatar.cc/40" class="rounded-full" />
+      <span>{{ userName }}</span>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="bg-[#FFC017] border-b">
+  <div class="max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center justify-between">
+    <!-- Left -->
+    <div class="max-w-xl">
+      <h1 class="text-7xl font-serif leading-tight">Stay curious.</h1>
+
+      <p class="mt-6 text-lg text-gray-800">
+        Discover stories, thinking, and expertise from writers on any topic.
+      </p>
+
+      <button class="mt-8 bg-black text-white px-6 py-3 rounded-full text-lg hover:bg-gray-800">
+        Start Reading
+      </button>
+    </div>
+
+    <!-- Right Illustration -->
+    <div class="mt-10 md:mt-0">
+      <img src="https://illustrations.popsy.co/amber/reading.svg" class="w-96" alt="illustration" />
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="max-w-7xl mx-auto px-6 py-16">
+  <h2 class="text-3xl font-semibold mb-10 text-center">Why BloggieBlogs?</h2>
+
+  <div class="grid md:grid-cols-3 gap-10">
+    <div class="text-center">
+      <h3 class="font-bold text-lg">✍️ Write Freely</h3>
+      <p class="text-gray-600 mt-2">Share your ideas with the world without limits.</p>
+    </div>
+
+    <div class="text-center">
+      <h3 class="font-bold text-lg">📖 Read Quality Content</h3>
+      <p class="text-gray-600 mt-2">Explore thousands of articles across domains.</p>
+    </div>
+
+    <div class="text-center">
+      <h3 class="font-bold text-lg">🌍 Grow Audience</h3>
+      <p class="text-gray-600 mt-2">Build your personal brand and reach people globally.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRENDING BLOGS -->
+<section class="bg-gray-50 py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-2xl font-semibold mb-10">Trending on BloggieBlogs</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      @for (blog of blogs || []; track blog?.id) {
+        <div
+          class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition cursor-pointer"
+          (click)="NavigateToBlogById(blog?.id)"
+        >
+          <h3 class="font-bold text-lg">
+            {{ blog?.title }}
+          </h3>
+
+          <p class="text-gray-600 mt-2">
+            {{ blog?.description }}
+          </p>
+
+          <div class="text-sm text-gray-500 mt-4">{{ blog?.author }} · {{ blog?.date }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 text-center">
+  <h2 class="text-3xl font-semibold">Ready to start writing?</h2>
+
+  <p class="text-gray-600 mt-4">Join thousands of writers sharing their stories.</p>
+
+  <button class="mt-6 bg-black text-white px-6 py-3 rounded-full text-lg hover:bg-gray-800">
+    Get Started
+  </button>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t py-6 text-center text-gray-500 text-sm">
+  © 2026 BloggieBlogs. All rights reserved.
+</footer>

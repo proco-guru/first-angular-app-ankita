@@ -1,171 +1,88 @@
-/* Main Layout */
-.main-container {
-  display: flex;
-  height: 100vh;
-  font-family: 'Poppins', sans-serif;
-}
+// <!-- NAVBAR -->
+// <header class="border-b bg-white sticky top-0 z-50">
+//   <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+    
+//     <!-- Logo -->
+//     <h1 class="text-xl font-bold cursor-pointer">MediumClone</h1>
 
-/* LEFT PANEL */
-.left-panel {
-  flex: 1;
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px;
+//     <!-- Right Section -->
+//     <div class="flex items-center gap-6 text-sm">
+//       <a class="cursor-pointer hover:text-black text-gray-600">Write</a>
+//       <a class="cursor-pointer hover:text-black text-gray-600">Sign In</a>
+//       <button class="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800">
+//         Get Started
+//       </button>
+//     </div>
+//   </div>
+// </header>
 
-  h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-  }
 
-  p {
-    font-size: 18px;
-    opacity: 0.9;
-  }
-}
+// <!-- HERO -->
+// <section class="bg-[#FFC017] py-20 border-b">
+//   <div class="max-w-6xl mx-auto px-6">
+//     <h1 class="text-6xl font-serif leading-tight">
+//       Stay curious.
+//     </h1>
+//     <p class="mt-4 text-lg text-gray-800 max-w-xl">
+//       Discover stories, thinking, and expertise from writers on any topic.
+//     </p>
+//     <button class="mt-6 bg-black text-white px-6 py-3 rounded-full text-lg hover:bg-gray-800">
+//       Start Reading
+//     </button>
+//   </div>
+// </section>
 
-/* RIGHT PANEL */
-.right-panel {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f5f7fb;
-}
 
-/* GLASS CARD */
-.auth-card {
-  width: 350px;
-  padding: 30px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-  text-align: center;
+// <!-- MAIN -->
+// <div class="max-w-6xl mx-auto px-6 py-10 flex gap-10">
 
-  h2 {
-    margin-bottom: 20px;
-  }
-}
+//   <!-- BLOG LIST -->
+//   <div class="flex-1">
 
-/* INPUT GROUP (Floating Label) */
-.input-group {
-  position: relative;
-  margin-bottom: 20px;
+//     <div *ngFor="let blog of blogs" 
+//          class="border-b pb-6 mb-6 cursor-pointer hover:bg-gray-50 p-3 rounded-lg transition">
 
-  input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    background: transparent;
+//       <!-- Author -->
+//       <div class="flex items-center gap-2 text-sm text-gray-600">
+//         <img src="https://i.pravatar.cc/30" class="rounded-full" />
+//         <span>{{ blog.author }}</span>
+//       </div>
 
-    &:focus {
-      border-color: #4facfe;
-    }
+//       <!-- Title -->
+//       <h2 class="text-xl font-bold mt-2">
+//         {{ blog.title }}
+//       </h2>
 
-    &:focus + label,
-    &:valid + label {
-      top: -10px;
-      font-size: 12px;
-      color: #4facfe;
-    }
-  }
+//       <!-- Description -->
+//       <p class="text-gray-600 mt-2 line-clamp-2">
+//         {{ blog.description }}
+//       </p>
 
-  label {
-    position: absolute;
-    left: 10px;
-    top: 12px;
-    background: white;
-    padding: 0 5px;
-    transition: 0.3s;
-    color: gray;
-  }
-}
+//       <!-- Footer -->
+//       <div class="text-xs text-gray-500 mt-3 flex gap-2">
+//         <span>{{ blog.date }}</span>
+//         <span>· {{ blog.readTime }} min read</span>
+//       </div>
 
-/* Validation text */
-small {
-  color: red;
-  font-size: 12px;
-  display: block;
-  text-align: left;
-  margin-bottom: 10px;
-}
+//     </div>
 
-/* OPTIONS */
-.options {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
-  margin-bottom: 15px;
+//   </div>
 
-  a {
-    color: #4facfe;
-    text-decoration: none;
-  }
-}
 
-/* BUTTON */
-button {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background: #4facfe;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
+//   <!-- SIDEBAR -->
+//   <aside class="w-80 hidden md:block">
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  }
+//     <h3 class="font-semibold mb-4">Discover more topics</h3>
 
-  &:disabled {
-    background: #ccc;
-  }
-}
+//     <div class="flex flex-wrap gap-2">
+//       <span *ngFor="let topic of topics"
+//             class="px-3 py-1 bg-gray-100 rounded-full text-sm cursor-pointer hover:bg-gray-200">
+//         {{ topic }}
+//       </span>
+//     </div>
 
-/* DIVIDER */
-.divider {
-  margin: 15px 0;
-  font-size: 13px;
-  color: gray;
-}
+//   </aside>
 
-/* SOCIAL LOGIN */
-.social-login {
-  display: flex;
-  gap: 10px;
+// </div>
 
-  button {
-    flex: 1;
-    background: #eee;
-    color: black;
 
-    &.google:hover {
-      background: #db4437;
-      color: white;
-    }
-
-    &.github:hover {
-      background: black;
-      color: white;
-    }
-  }
-}
-
-/* SWITCH TEXT */
-.switch {
-  margin-top: 15px;
-  font-size: 14px;
-
-  a {
-    color: #4facfe;
-    font-weight: bold;
-  }
-}
