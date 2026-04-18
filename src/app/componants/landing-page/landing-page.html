@@ -73,20 +73,18 @@
 
     <div class="grid md:grid-cols-3 gap-8">
       @for (blog of blogs || []; track blog?.id) {
-        <div
-          class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition cursor-pointer"
-          (click)="NavigateToBlogById(blog?.id)"
-        >
-          <h3 class="font-bold text-lg">
-            {{ blog?.title }}
-          </h3>
+      <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition cursor-pointer"
+        (click)="NavigateToBlogById(blog.id)">
+        <h3 class="font-bold text-lg">
+          {{ blog?.title }}
+        </h3>
 
-          <p class="text-gray-600 mt-2">
-            {{ blog?.description }}
-          </p>
+        <p class="text-gray-600 mt-2">
+          {{ blog?.description }}
+        </p>
 
-          <div class="text-sm text-gray-500 mt-4">{{ blog?.author }} · {{ blog?.date }}</div>
-        </div>
+        <div class="text-sm text-gray-500 mt-4">{{ blog?.author }} · {{ blog?.date }}</div>
+      </div>
       }
     </div>
   </div>
